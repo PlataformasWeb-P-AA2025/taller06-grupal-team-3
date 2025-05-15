@@ -9,8 +9,10 @@ from generar_base import engine
 Session = sessionmaker(bind=engine)
 session = Session()
 
+#realiza una peticion para obtener el json
 archivo = requests.get('https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json')
 
+#convierte a una estructura de datos de python
 datos_json = archivo.json()
 
 for d in datos_json:
